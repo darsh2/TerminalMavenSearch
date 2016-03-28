@@ -5,13 +5,15 @@ import logging
 SEPARATOR = '----------------------------------------------------------------------------'
 UTF_8 = 'utf-8'
 
-def search_group_artifact(search_term, start_from, rows):
+def search_group_artifact(search_term, start, rows):
 	url = 'http://search.maven.org/solrsearch/select?q={}&start={}&rows={}&wt=json'
-	url = url.format(search_term. start_from, rows)
+	url = url.format(search_term, start, rows)
 	perform_search(url)
 
 def search_all_versions(group_id, artifact, start, rows):
 	url = 'http://search.maven.org/solrsearch/select?q=g:\"{}\"+AND+a:\"{}\"&core=gav&rows=20&wt=json'
+	url = url.format(group_id, artifact, start, rows)
+	perform_search(url)
 
 def search_artifacts_in_group(group_id, start, rows):
 	url = 'http://search.maven.org/solrsearch/select?q=g:\"{}\"&guice={}&rows={}&wt=json'
@@ -104,11 +106,15 @@ def parse_json(json_dict):
 		print SEPARATOR
 
 
-search_by_class_name('junit', 0, 10, 0)
-print SEPARATOR
-search_by_class_name('org.specs.runner.JUnit', 0, 10, 1)
-print SEPARATOR
-search_by_checksum('35379fb6526fd019f331542b4e9ae2e566c57933', 0, 10)
-print SEPARATOR
-search_by_tag('sbtplugin', 0, 10)
-print SEPARATOR
+
+#Bad of way testing if code works
+test = None
+if test:
+	search_by_class_name('junit', 0, 10, 0)
+	print SEPARATOR
+	search_by_class_name('org.specs.runner.JUnit', 0, 10, 1)
+	print SEPARATOR
+	search_by_checksum('35379fb6526fd019f331542b4e9ae2e566c57933', 0, 10)
+	print SEPARATOR
+	search_by_tag('sbtplugin', 0, 10)
+	print SEPARATOR
