@@ -5,7 +5,7 @@ of the Rest API provided here http://search.maven.org/#api
 
 #Motivation
 To get started with python and make it easier
-to information obtain artifacts for use from the terminal.
+to obtain information about artifacts from the terminal.
 
 #Requirements
 Requires Python 2.7 to run. Untested on Windows.
