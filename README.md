@@ -75,5 +75,5 @@ Available also: ['-javadoc.jar', '-sources.jar', '.jar', '.pom']
 Showing results 5 to 6 out of 11 results
 ```
 
-#TODO:
+#TODO
 Publish on PyPI
