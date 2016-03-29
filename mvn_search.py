@@ -3,15 +3,15 @@ import argparse
 from mvn_api import *
 
 parser = argparse.ArgumentParser(description="Search artifacts in the Central Repository from terminal.")
-parser.add_argument("-s", "--search", type=str, help="Basic search. Returns artifacts with search_term in ArtifactId or GroupId")
+parser.add_argument("-s", "--search", type=str, help="Basic search. Returns artifacts with search term in ArtifactId or GroupId")
 
-parser.add_argument("-g", "--group", type=str, help="Get all artifacts in group")
-parser.add_argument("-a", "--artifact", type=str, help="Search all artifacts with id as artifact")
+parser.add_argument("-g", "--group", type=str, help="Returns all artifacts in specified group")
+parser.add_argument("-a", "--artifact", type=str, help="Search all artifacts with specified id")
 
-parser.add_argument("-c", "--class_name", type=str, help="Search by class name")
-parser.add_argument("-fc", "--fclass_name", type=str, help="Search by fully quantified class name")
+parser.add_argument("-c", "--class_name", type=str, help="Search by class name. Returns list of artifacts, down to the specific version containing the class")
+parser.add_argument("-fc", "--fclass_name", type=str, help="Search by fully quantified class name. Returns list of artifacts, down to the specific version containing the class")
 
-parser.add_argument("-cs", "--checksum", type=str, help="Search artifact having exact checksum")
+parser.add_argument("-cs", "--checksum", type=str, help="Search artifact by SHA-1 checksum")
 
 parser.add_argument("-t", "--tag", type=str, help="Search for all artifacts having specified tag")
 
